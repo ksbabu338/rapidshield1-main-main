@@ -310,7 +310,6 @@
 
 /* ===== Base Styles ===== */
 body {
-  min-height: max(884px, 100dvh);
   font-family: 'Space Grotesk', sans-serif;
 }
 

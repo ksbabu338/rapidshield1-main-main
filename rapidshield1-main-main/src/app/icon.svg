@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+  <style>
+    path {
+      fill: #9a3412;
+    }
+    @media (prefers-color-scheme: dark) {
+      path {
+        fill: #818cf8;
+      }
+    }
+  </style>
+  <path d="M480-40q-182-47-281-177.5T100-520v-280l380-160 380 160v280q0 162-99 292.5T480-40Z"/>
+</svg>

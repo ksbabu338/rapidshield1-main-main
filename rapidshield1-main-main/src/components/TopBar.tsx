@@ -1,10 +1,12 @@
 'use client';
 
 import { useApp } from '@/contexts/AppContext';
+import { useRouter } from 'next/navigation';
 
 export function TopBar() {
   const { state, isRPi5Online } = useApp();
   const { config } = state;
+  const router = useRouter();
 
   const handleMobileMenu = () => {
     if (typeof window !== 'undefined' && (window as any).__rapidshield_toggle_mobile_menu) {
@@ -60,6 +62,21 @@ export function TopBar() {
           {state.logs.length > 0 && (
             <span className="absolute top-0.5 right-0.5 w-2 h-2 rounded-full bg-secondary-container dark:bg-error"></span>
           )}
+        </button>
+
+        {/* Logout / Reset (Testing) */}
+        <button 
+          onClick={() => {
+            localStorage.removeItem('rapidshield_auth');
+            localStorage.removeItem('rapidshield_setup_complete');
+            localStorage.removeItem('rapidshield_emergency_contacts');
+            router.push('/login');
+          }}
+          className="relative p-1.5 rounded-lg hover:bg-error-container text-on-surface-variant hover:text-error transition-colors flex items-center gap-1"
+          title="Reset & Logout (Testing Phase)"
+        >
+          <span className="material-symbols-outlined">logout</span>
+          <span className="hidden md:inline text-xs font-bold uppercase tracking-wider">Reset</span>
         </button>
       </div>
     </header>
