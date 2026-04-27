@@ -5,65 +5,61 @@
 
 /* ===== LIGHT MODE (Vibrant Command) — DEFAULT ===== */
 @theme {
-  /* Primary — Deep Brown (Icons & Accents) */
-  --color-primary: #5d4037;
-  --color-on-primary: #f5f5dc;
-  --color-primary-container: #3e2723;
-  --color-on-primary-container: #f5f5dc;
-  --color-primary-fixed: #efebe9;
-  --color-primary-fixed-dim: #d7ccc8;
-  --color-inverse-primary: #bcaaa4;
+  /* Primary — Rich Terracotta / Burnt Amber */
+  --color-primary: #9a3412;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #ffedd5;
+  --color-on-primary-container: #7c2d12;
+  --color-primary-fixed: #fdba74;
+  --color-primary-fixed-dim: #f97316;
+  --color-inverse-primary: #fdba74;
 
-  /* Secondary — Medium Brown */
-  --color-secondary: #795548;
-  --color-on-secondary: #f5f5dc;
-  --color-secondary-container: #8d6e63;
-  --color-on-secondary-container: #f5f5dc;
-  --color-secondary-fixed: #f5f5f5;
-  --color-secondary-fixed-dim: #eeeeee;
+  /* Secondary — Warm Stone / Taupe */
+  --color-secondary: #78716c;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #f5f5f4;
+  --color-on-secondary-container: #44403c;
+  --color-secondary-fixed: #e7e5e4;
+  --color-secondary-fixed-dim: #d6d3d1;
 
-  /* Tertiary — Warm Tan */
-  --color-tertiary: #a1887f;
-  --color-on-tertiary: #f5f5dc;
-  --color-tertiary-container: #bcaaa4;
-  --color-on-tertiary-container: #3e2723;
-  --color-tertiary-fixed: #fbe9e7;
-  --color-tertiary-fixed-dim: #ffccbc;
+  /* Tertiary — Sage / Olive (Non-blue contrast) */
+  --color-tertiary: #4d7c0f;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #ecfccb;
+  --color-on-tertiary-container: #3f6212;
+  --color-tertiary-fixed: #d9f99d;
+  --color-tertiary-fixed-dim: #a3e635;
 
   /* Error */
-  --color-error: #a83232;
+  --color-error: #dc2626;
   --color-on-error: #ffffff;
-  --color-error-container: #fce8e8;
-  --color-on-error-container: #751b1b;
+  --color-error-container: #fef2f2;
+  --color-on-error-container: #991b1b;
 
-  /* Surfaces — Off-white, paper-like */
-  --color-surface: #f9f9fb;
-  --color-surface-dim: #e6e7ec;
+  /* Surfaces — Clean Ivory & Crisp White */
+  --color-surface: #ffffff;
+  --color-surface-dim: #f5f5f4;
   --color-surface-bright: #ffffff;
-  --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #f4f5f8;
-  --color-surface-container: #eff0f4;
-  --color-surface-container-high: #e8eaef;
-  --color-surface-container-highest: #e0e3e8;
-  --color-surface-variant: #e0e3e8;
-  --color-surface-tint: #1c2e4a;
-  --color-on-surface: #1a1c20;
-  --color-on-surface-variant: #4f5359;
-  --color-inverse-surface: #2b2d33;
-  --color-inverse-on-surface: #f2f3f7;
+  --color-surface-container-lowest: #fcfbf9; /* Sidebar: Very subtle warm ivory */
+  --color-surface-container-low: #faf9f6;
+  --color-surface-container: #ffffff; /* Panels: Crisp White */
+  --color-surface-container-high: #f5f5f4;
+  --color-surface-container-highest: #e7e5e4;
+  --color-surface-variant: #f5f5f4;
+  --color-surface-tint: #9a3412;
+  
+  --color-on-surface: #1c1917; /* Main Headings: Charcoal/Onyx */
+  --color-on-surface-variant: #57534e; /* Details: Muted Stone */
+  --color-inverse-surface: #292524;
+  --color-inverse-on-surface: #f5f5f4;
 
   /* Outline */
-  --color-outline: #7a7e85;
-  --color-outline-variant: #c3c6cc;
+  --color-outline: #d6d3d1;
+  --color-outline-variant: #e7e5e4;
 
-  /* Background — Classic Beige */
-  --color-background: #f5f5dc;
-  --color-on-background: #3e2723;
-  /* Surface — Brown (to host beige text) */
-  --color-surface: #5d4037;
-  --color-on-surface: #f5f5dc;
-  --color-surface-container: #3e2723;
-  --color-on-surface-variant: #f5f5dc;
+  /* Background — Warm Ivory Canvas */
+  --color-background: #faf9f6;
+  --color-on-background: #1c1917;
 
   /* Radius */
   --radius-DEFAULT: 0.25rem;
@@ -133,9 +129,10 @@
 
 /* ===== Component Utilities ===== */
 @utility glass-panel {
-  background: white;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 1px 3px rgba(46, 49, 146, 0.1);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 10px 40px -10px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.02);
 }
 
 @utility hardware-bevel {
@@ -306,9 +303,9 @@
 }
 
 @keyframes pulse-border-primary {
-  0% { border-color: rgba(121, 85, 72, 0.5); }
-  50% { border-color: rgba(121, 85, 72, 1); }
-  100% { border-color: rgba(121, 85, 72, 0.5); }
+  0% { border-color: rgba(59, 43, 36, 0.5); }
+  50% { border-color: rgba(59, 43, 36, 1); }
+  100% { border-color: rgba(59, 43, 36, 0.5); }
 }
 
 /* ===== Base Styles ===== */
@@ -319,7 +316,17 @@ body {
 
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  transition: all 0.3s ease;
 }
+
+/* Light Mode Icon Crispness */
+.light .material-symbols-outlined {
+  color: inherit;
+  -webkit-text-stroke: 0.3px currentColor;
+  paint-order: stroke fill;
+}
+
+
 
 /* Hide scrollbar for clean UI */
 .scrollbar-hide::-webkit-scrollbar {
@@ -367,7 +374,7 @@ button:active, a:active {
 
 /* Brand Styling */
 h1.font-black.tracking-widest {
-  background: linear-gradient(90deg, #5d4037 0%, #d84315 50%, #5d4037 100%);
+  background: linear-gradient(90deg, #9a3412 0%, #ea580c 50%, #9a3412 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -399,14 +406,14 @@ main, .flex-1 {
   animation: fade-in-up 0.6s ease-out forwards;
 }
 
-/* Card Hover Masala */
+/* Card Hover Premium */
 .glass-panel, .bg-surface-container-lowest {
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.glass-panel:hover, .bg-surface-container-lowest:hover {
+.glass-panel:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.03);
 }
 
 /* Sidebar Nav Enhancements */
