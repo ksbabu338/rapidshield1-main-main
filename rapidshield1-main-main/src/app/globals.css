@@ -1,0 +1,456 @@
+@import "tailwindcss";
+
+/* Enable class-based dark mode for Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ===== LIGHT MODE (Vibrant Command) — DEFAULT ===== */
+@theme {
+  /* Primary — Deep Brown (Icons & Accents) */
+  --color-primary: #5d4037;
+  --color-on-primary: #f5f5dc;
+  --color-primary-container: #3e2723;
+  --color-on-primary-container: #f5f5dc;
+  --color-primary-fixed: #efebe9;
+  --color-primary-fixed-dim: #d7ccc8;
+  --color-inverse-primary: #bcaaa4;
+
+  /* Secondary — Medium Brown */
+  --color-secondary: #795548;
+  --color-on-secondary: #f5f5dc;
+  --color-secondary-container: #8d6e63;
+  --color-on-secondary-container: #f5f5dc;
+  --color-secondary-fixed: #f5f5f5;
+  --color-secondary-fixed-dim: #eeeeee;
+
+  /* Tertiary — Warm Tan */
+  --color-tertiary: #a1887f;
+  --color-on-tertiary: #f5f5dc;
+  --color-tertiary-container: #bcaaa4;
+  --color-on-tertiary-container: #3e2723;
+  --color-tertiary-fixed: #fbe9e7;
+  --color-tertiary-fixed-dim: #ffccbc;
+
+  /* Error */
+  --color-error: #a83232;
+  --color-on-error: #ffffff;
+  --color-error-container: #fce8e8;
+  --color-on-error-container: #751b1b;
+
+  /* Surfaces — Off-white, paper-like */
+  --color-surface: #f9f9fb;
+  --color-surface-dim: #e6e7ec;
+  --color-surface-bright: #ffffff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f4f5f8;
+  --color-surface-container: #eff0f4;
+  --color-surface-container-high: #e8eaef;
+  --color-surface-container-highest: #e0e3e8;
+  --color-surface-variant: #e0e3e8;
+  --color-surface-tint: #1c2e4a;
+  --color-on-surface: #1a1c20;
+  --color-on-surface-variant: #4f5359;
+  --color-inverse-surface: #2b2d33;
+  --color-inverse-on-surface: #f2f3f7;
+
+  /* Outline */
+  --color-outline: #7a7e85;
+  --color-outline-variant: #c3c6cc;
+
+  /* Background — Classic Beige */
+  --color-background: #f5f5dc;
+  --color-on-background: #3e2723;
+  /* Surface — Brown (to host beige text) */
+  --color-surface: #5d4037;
+  --color-on-surface: #f5f5dc;
+  --color-surface-container: #3e2723;
+  --color-on-surface-variant: #f5f5dc;
+
+  /* Radius */
+  --radius-DEFAULT: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+
+  /* Spacing */
+  --spacing-gutter: 24px;
+  --spacing-container-margin: 32px;
+  --spacing-unit: 8px;
+  --spacing-hit-area-min: 48px;
+  --spacing-margin: 32px;
+
+  /* Fonts */
+  --font-headline-xl: "Space Grotesk", sans-serif;
+  --font-label-caps: "Space Grotesk", sans-serif;
+  --font-data-mono: "Space Grotesk", monospace;
+  --font-body-lg: "Space Grotesk", sans-serif;
+  --font-body-sm: "Space Grotesk", sans-serif;
+  --font-headline-md: "Space Grotesk", sans-serif;
+}
+
+/* ===== Typography Utilities ===== */
+@utility text-headline-xl {
+  font-size: 48px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+@utility text-label-caps {
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+@utility text-data-mono {
+  font-size: 18px;
+  line-height: 1.0;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+@utility text-body-lg {
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+@utility text-body-sm {
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+@utility text-headline-md {
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+@utility text-headline-lg {
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+/* ===== Component Utilities ===== */
+@utility glass-panel {
+  background: white;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(46, 49, 146, 0.1);
+}
+
+@utility hardware-bevel {
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.4), 0 1px 3px rgba(46, 49, 146, 0.1);
+}
+
+@utility glow-indigo {
+  box-shadow: 0 0 15px rgba(79, 84, 180, 0.2);
+}
+
+@utility glow-orange {
+  box-shadow: 0 0 15px rgba(255, 100, 45, 0.3);
+}
+
+@utility btn-premium {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-tertiary) 100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+}
+
+@utility scanline {
+  background: linear-gradient(to bottom, transparent 50%, rgba(79, 84, 180, 0.03) 50%);
+  background-size: 100% 4px;
+}
+
+@utility critical-pulse {
+  border-color: #ba1a1a;
+  box-shadow: 0 0 15px rgba(186, 26, 26, 0.3);
+}
+
+@utility sos-glow {
+  box-shadow: 0 0 30px rgba(255, 100, 45, 0.3);
+  animation: pulse-red 1.5s infinite;
+}
+
+@utility hazard-stripe {
+  background: repeating-linear-gradient(
+    -45deg,
+    #ff642d,
+    #ff642d 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
+
+@utility technical-grid {
+  background-image: radial-gradient(rgba(79, 84, 180, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* ===== DARK MODE OVERRIDES ===== */
+.dark {
+  /* Primary — Electric Indigo (Masala Glow) */
+  --color-primary: #818cf8;
+  --color-on-primary: #000000;
+  --color-primary-container: #4f46e5;
+  --color-on-primary-container: #e0e7ff;
+  --color-primary-fixed: #a5b4fc;
+  --color-primary-fixed-dim: #818cf8;
+  --color-inverse-primary: #3730a3;
+
+  /* Secondary — Fiery Amber/Orange (Spice) */
+  --color-secondary: #fbbf24;
+  --color-on-secondary: #000000;
+  --color-secondary-container: #d97706;
+  --color-on-secondary-container: #fef3c7;
+  --color-secondary-fixed: #fcd34d;
+  --color-secondary-fixed-dim: #fbbf24;
+
+  /* Tertiary — Neon Cyan */
+  --color-tertiary: #22d3ee;
+  --color-on-tertiary: #000000;
+  --color-tertiary-container: #0891b2;
+  --color-on-tertiary-container: #cffafe;
+  --color-tertiary-fixed: #67e8f9;
+  --color-tertiary-fixed-dim: #22d3ee;
+
+  /* Error */
+  --color-error: #cc8585;
+  --color-on-error: #331515;
+  --color-error-container: #4c1f1f;
+  --color-on-error-container: #e5b3b3;
+
+  /* Surfaces — Deep Black */
+  --color-surface: #000000;
+  --color-surface-dim: #000000;
+  --color-surface-bright: #1a1a1a;
+  --color-surface-container-lowest: #000000;
+  --color-surface-container-low: #0a0a0a;
+  --color-surface-container: #121212;
+  --color-surface-container-high: #1a1a1a;
+  --color-surface-container-highest: #222222;
+  --color-surface-variant: #222222;
+  --color-surface-tint: #a0a8b5;
+  --color-on-surface: #e5e7eb;
+  --color-on-surface-variant: #9ca3af;
+  --color-inverse-surface: #e5e7eb;
+  --color-inverse-on-surface: #121212;
+
+  /* Outline */
+  --color-outline: #4b5563;
+  --color-outline-variant: #374151;
+
+  /* Background */
+  --color-background: #000000;
+  --color-on-background: #e5e7eb;
+}
+
+/* Dark mode overrides for utilities that need different visuals */
+.dark .glass-panel {
+  background: linear-gradient(180deg, rgba(45, 52, 73, 0.4) 0%, rgba(23, 31, 51, 0.6) 100%) !important;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(210, 187, 255, 0.1) !important;
+  box-shadow: none !important;
+}
+
+.dark .scanline {
+  background: linear-gradient(to bottom, transparent 50%, rgba(124, 58, 237, 0.05) 50%) !important;
+  background-size: 100% 4px;
+}
+
+.dark .technical-grid {
+  background-image: radial-gradient(rgba(124, 58, 237, 0.1) 1px, transparent 0) !important;
+}
+
+.dark .hazard-stripe {
+  background: repeating-linear-gradient(
+    -45deg,
+    #aa4900,
+    #aa4900 10px,
+    #0b1326 10px,
+    #0b1326 20px
+  ) !important;
+}
+
+.dark .btn-premium {
+  background: linear-gradient(180deg, #4f46e5 0%, #312e81 100%) !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 4px 15px rgba(99, 102, 241, 0.3) !important;
+  border: 1px solid rgba(129, 140, 248, 0.3) !important;
+}
+
+/* ===== Animations ===== */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes edge-glow {
+  0%, 100% { box-shadow: 0 0 5px var(--color-primary-container); }
+  50% { box-shadow: 0 0 15px var(--color-primary-container); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-red {
+  0% { box-shadow: 0 0 20px rgba(255, 100, 45, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(255, 100, 45, 0.5); }
+  100% { box-shadow: 0 0 20px rgba(255, 100, 45, 0.2); }
+}
+
+@keyframes pulse-border-primary {
+  0% { border-color: rgba(121, 85, 72, 0.5); }
+  50% { border-color: rgba(121, 85, 72, 1); }
+  100% { border-color: rgba(121, 85, 72, 0.5); }
+}
+
+/* ===== Base Styles ===== */
+body {
+  min-height: max(884px, 100dvh);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Hide scrollbar for clean UI */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(79, 84, 180, 0.2);
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(79, 84, 180, 0.4);
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.2);
+}
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 58, 237, 0.4);
+}
+
+/* Neon glow for dark mode elements */
+.neon-border-primary {
+  border: 1px solid rgba(160, 168, 181, 0.3);
+  box-shadow: 0 0 15px rgba(160, 168, 181, 0.1);
+}
+
+/* Base button animations */
+button, a {
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s ease, filter 0.15s ease, background-color 0.15s ease;
+}
+
+button:active, a:active {
+  transform: scale(0.97);
+}
+
+/* Brand Styling */
+h1.font-black.tracking-widest {
+  background: linear-gradient(90deg, #5d4037 0%, #d84315 50%, #5d4037 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Rounded Icon Containers & Edge Lighting */
+.w-10.h-10.flex.items-center.justify-center,
+.w-9.h-9.rounded-full.flex.items-center.justify-center {
+  border-radius: 20px !important;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(93, 64, 55, 0.1) !important;
+  animation: edge-glow 4s ease-in-out infinite;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.w-10.h-10.flex.items-center.justify-center:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(93, 64, 55, 0.2) !important;
+}
+
+.dark .w-10.h-10.flex.items-center.justify-center,
+.dark .w-9.h-9.rounded-full.flex.items-center.justify-center {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 20px rgba(129, 140, 248, 0.2) !important;
+}
+
+/* Page Load Animation */
+main, .flex-1 {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+/* Card Hover Masala */
+.glass-panel, .bg-surface-container-lowest {
+  transition: all 0.3s ease;
+}
+
+.glass-panel:hover, .bg-surface-container-lowest:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Sidebar Nav Enhancements */
+nav a {
+  position: relative;
+  overflow: hidden;
+}
+
+nav a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+nav a:hover .material-symbols-outlined {
+  animation: float 2s ease-in-out infinite;
+}
+
+/* Polar Aurora effect on tap in Dark Mode */
+.dark .material-symbols-outlined {
+  color: #888888;
+  -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+.dark a:active .material-symbols-outlined,
+.dark button:active .material-symbols-outlined,
+.dark .material-symbols-outlined:active {
+  color: #ffffff;
+  -webkit-text-stroke: 1px #ffffff;
+  text-shadow: 
+    0 0 10px rgba(0, 255, 255, 0.9),
+    0 0 20px rgba(0, 255, 128, 0.9),
+    0 0 30px rgba(138, 43, 226, 0.9),
+    0 0 40px rgba(0, 255, 255, 0.6);
+  transform: scale(1.1);
+}
+
